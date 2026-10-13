@@ -1,1 +1,471 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#172033">
+  <meta name="description" content="Pinturas Toribio. Pintado de casas y departamentos, empastado, escarchados, estucados y microcemento. Solicita tu cotización por WhatsApp.">
+  <title>Pinturas Toribio | Pintura y acabados profesionales</title>
+
+  <style>
+    :root {
+      --dark: #172033;
+      --orange: #f59e0b;
+      --cream: #fffaf1;
+      --text: #303746;
+      --muted: #687080;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    a { text-decoration: none; }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: var(--dark);
+      color: white;
+      padding: 17px 0;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: white;
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span { color: var(--orange); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+    }
+
+    nav a {
+      color: white;
+      font-size: 14px;
+    }
+
+    nav a:hover { color: var(--orange); }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(16,25,43,.94), rgba(16,25,43,.52)),
+        url("https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+      color: white;
+      padding: 105px 0;
+    }
+
+    .hero-content { max-width: 690px; }
+
+    .eyebrow {
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 65px);
+      line-height: 1.08;
+      margin: 17px 0;
+    }
+
+    h1 span { color: var(--orange); }
+
+    .hero p {
+      color: #f0f2f7;
+      font-size: 18px;
+      max-width: 570px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 23px;
+      border-radius: 7px;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-orange {
+      background: var(--orange);
+      color: #172033;
+    }
+
+    .btn-outline {
+      border: 1px solid white;
+      color: white;
+      margin-left: 9px;
+    }
+
+    .trust {
+      background: var(--cream);
+      padding: 24px 0;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .trust strong {
+      display: block;
+      color: var(--dark);
+      font-size: 16px;
+    }
+
+    .trust span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section { padding: 78px 0; }
+
+    .section-head {
+      max-width: 650px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .section-head h2 {
+      color: var(--dark);
+      font-size: clamp(28px, 4vw, 39px);
+      line-height: 1.2;
+      margin: 10px 0;
+    }
+
+    .section-head p { color: var(--muted); }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 23px;
+    }
+
+    .service {
+      overflow: hidden;
+      border: 1px solid #e9eaf0;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 8px 25px rgba(20,30,50,.05);
+      transition: .2s;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(20,30,50,.1);
+    }
+
+    .service img {
+      display: block;
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      background: #eee;
+    }
+
+    .service-content { padding: 22px; }
+
+    .service h3 {
+      color: var(--dark);
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .about { background: var(--cream); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .about img {
+      width: 100%;
+      min-height: 330px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .about h2 {
+      color: var(--dark);
+      font-size: clamp(29px, 4vw, 40px);
+      line-height: 1.2;
+      margin: 12px 0 18px;
+    }
+
+    .about p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .check {
+      list-style: none;
+      margin: 20px 0 25px;
+    }
+
+    .check li { margin: 9px 0; }
+
+    .check li::before {
+      content: "✓";
+      color: #16834a;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .cta {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin: 10px 0;
+    }
+
+    .cta p {
+      color: #d9dfeb;
+      margin: 0 auto 25px;
+      max-width: 600px;
+    }
+
+    footer {
+      background: #101727;
+      color: #cbd1dd;
+      padding: 25px 0;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 10;
+      background: #20c767;
+      color: white;
+      padding: 13px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 5px 20px #0003;
+    }
+
+    @media (max-width: 760px) {
+      .nav { flex-direction: column; }
+      nav { gap: 14px; flex-wrap: wrap; justify-content: center; }
+      .hero { padding: 75px 0; }
+      .hero p { font-size: 16px; }
+      .btn { margin: 5px 4px 5px 0; }
+      .btn-outline { margin-left: 0; }
+      .trust-grid { grid-template-columns: 1fr; gap: 14px; }
+      .services { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 30px; }
+      .about img { min-height: 240px; }
+      section { padding: 58px 0; }
+      .whatsapp { bottom: 14px; right: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">PINTURAS <span>TORIBIO</span></a>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <span class="eyebrow">Pintura y acabados</span>
+        <h1>Transformamos tus espacios con <span>excelentes acabados.</span></h1>
+        <p>
+          Dale nueva vida a tu hogar. Pintado de casas y departamentos,
+          empastado de paredes, estucados, escarchados y microcemento.
+        </p>
+        <a class="btn btn-orange" href="#contacto">Solicitar cotización</a>
+        <a class="btn btn-outline" href="#servicios">Ver servicios</a>
+      </div>
+    </section>
+
+    <div class="trust">
+      <div class="container trust-grid">
+        <div>
+          <strong>🎨 Pintura profesional</strong>
+          <span>Renueva tus ambientes</span>
+        </div>
+        <div>
+          <strong>🏠 Hogares y departamentos</strong>
+          <span>Interiores y exteriores</span>
+        </div>
+        <div>
+          <strong>✨ Acabados decorativos</strong>
+          <span>Detalles que marcan la diferencia</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Nuestros servicios</span>
+          <h2>Todo para renovar tus paredes</h2>
+          <p>Cuéntanos qué necesitas y conversemos sobre tu proyecto.</p>
+        </div>
+
+        <div class="services">
+          <article class="service">
+            <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=80" alt="Trabajo de pintura de paredes interiores">
+            <div class="service-content">
+              <h3>Pintado de casas</h3>
+              <p>Pintura de interiores, exteriores, habitaciones, salas, fachadas y departamentos.</p>
+            </div>
+          </article>
+
+          <article class="service">
+            <img src="https://images.unsplash.com/photo-1635424710928-8c8e6e9c1b4b?auto=format&fit=crop&w=800&q=80" alt="Preparación y acabado de paredes">
+            <div class="service-content">
+              <h3>Empastado y alisado</h3>
+              <p>Preparación de superficies para conseguir paredes lisas y listas para pintar.</p>
+            </div>
+          </article>
+
+          <article class="service">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Interior moderno con acabados decorativos">
+            <div class="service-content">
+              <h3>Estucados y escarchados</h3>
+              <p>Acabados decorativos para dar textura, personalidad y estilo a tus ambientes.</p>
+            </div>
+          </article>
+
+          <article class="service">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Sala moderna con acabados de diseño">
+            <div class="service-content">
+              <h3>Microcemento</h3>
+              <p>Acabados contemporáneos para renovar superficies con un estilo moderno.</p>
+            </div>
+          </article>
+
+          <article class="service">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80" alt="Casa con diseño interior moderno">
+            <div class="service-content">
+              <h3>Renovación de ambientes</h3>
+              <p>Mejora la apariencia de tus espacios con una renovación pensada para tu hogar.</p>
+            </div>
+          </article>
+
+          <article class="service">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" alt="Habitación renovada con estilo moderno">
+            <div class="service-content">
+              <h3>Acabados a tu gusto</h3>
+              <p>Conversemos sobre colores, texturas y el acabado que deseas conseguir.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="nosotros">
+      <div class="container about-grid">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=85" alt="Herramientas y trabajo de renovación">
+
+        <div>
+          <span class="eyebrow">Pinturas Toribio</span>
+          <h2>Tu espacio merece un buen acabado</h2>
+          <p>
+            Nos enfocamos en trabajos de pintura y acabados para que puedas
+            renovar tu casa o departamento según tus necesidades.
+          </p>
+          <ul class="check">
+            <li>Asesoría para tu proyecto</li>
+            <li>Opciones de colores y acabados</li>
+            <li>Cotización según el trabajo</li>
+            <li>Atención directa por WhatsApp</li>
+          </ul>
+          <a class="btn btn-orange"
+             href="https://wa.me/51934773214?text=Hola%2C%20quiero%20consultar%20por%20sus%20servicios%20de%20pintura."
+             target="_blank" rel="noopener">Hablemos de tu proyecto</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contacto">
+      <div class="container">
+        <span class="eyebrow">Contáctanos</span>
+        <h2>¿Listo para renovar tu hogar?</h2>
+        <p>
+          Escríbenos por WhatsApp, cuéntanos qué trabajo necesitas
+          y coordinemos los detalles de tu cotización.
+        </p>
+        <a class="btn btn-orange"
+           href="https://wa.me/51934773214?text=Hola%2C%20vengo%20de%20la%20web%20de%20Pinturas%20Toribio.%20Quiero%20una%20cotizaci%C3%B3n."
+           target="_blank" rel="noopener">📱 Cotizar por WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>PINTURAS TORIBIO</strong> · Pintura y acabados decorativos</p>
+      <p>Contacto: 934 773 214</p>
+      <p>© <span id="year"></span> Pinturas Toribio. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp"
+     href="https://wa.me/51934773214?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios."
+     target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WhatsApp</a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
